@@ -10,12 +10,12 @@ from models import Settings
 
 async def start_okx_withdraw():
     settings = Settings()
-    
     if not settings.okx.credentials.completely_filled():
         logger.error('OKX credentials not filled')
         return
     with open(config.WALLETS_FILE, "r") as file:
-        wallets = file.readlines()
+        wallets = [line.strip() for line in file.readlines()]
+
 
     await okx_withdraw(wallets=wallets)
 
