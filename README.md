@@ -181,3 +181,9 @@ python run.py
 ```
 
 Скрипт автоматически выполнит рассылку на указанные кошельки.
+
+## Подпишитесь на мой Telegram-канал
+
+Чтобы быть в курсе обновлений и получать больше полезной информации, подписывайтесь на мой канал в Telegram: [https://t.me/degencoding](https://t.me/degencoding).
+
+![Coding Crypto Degen Club](./image.png)
