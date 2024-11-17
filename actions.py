@@ -65,8 +65,8 @@ class OKXActions:
         if not currency_info.canWd:
             return None
 
-        if currency_info.minFee:
-            return currency_info.minFee
+        if currency_info.fee:
+            return currency_info.fee
         return None
 
     async def try_to_get_tx_hash(self, wd_id: str | int) -> str | None:

@@ -13,14 +13,14 @@ def create_files():
 
     settings = {
         'okx': {
-            'required_minimum_balance': 0.001,
             'withdraw_amount': {'from': 0.006, 'to': 0.007},
             'delay_between_withdrawals': {'from': 1200, 'to': 1500},
             'credentials': {
                 'api_key': '',
                 'secret_key': '',
                 'passphrase': '',
-            }
+            },
+            'max_fee': False,
         },
         'oklink_api_key': '',
         'minimal_balance': 0.0005

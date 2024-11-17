@@ -28,17 +28,17 @@ class FromTo:
     to_: int | float
 
 class OkxModel:
-    required_minimum_balance: float
     withdraw_amount: FromTo
     delay_between_withdrawals: FromTo
     credentials: OKXCredentials
+    maxFee: float | bool
 
 class Settings(Singleton, AutoRepr):
     def __init__(self):
         json_data = read_json(path=SETTINGS_FILE)
 
         self.okx = OkxModel()
-        self.okx.required_minimum_balance = json_data['okx']['required_minimum_balance']
+        # self.okx.required_minimum_balance = json_data['okx']['required_minimum_balance']
         self.okx.withdraw_amount = FromTo(
             from_=json_data['okx']['withdraw_amount']['from'],
             to_=json_data['okx']['withdraw_amount']['to'],
@@ -53,4 +53,5 @@ class Settings(Singleton, AutoRepr):
             passphrase=json_data['okx']['credentials']['passphrase']
         )
 
+        self.okx.maxFee = json_data['okx']['max_fee']
         self.oklink_api_key: str = json_data['oklink_api_key']
